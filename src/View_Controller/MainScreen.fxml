@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.MainScreenController">
+   <children>
+      <Button fx:id="btnSearchParts" layoutX="333.0" layoutY="62.0" mnemonicParsing="false" onAction="#btnSearchPartsAction" text="Search" />
+      <TableView fx:id="tableViewParts" layoutX="14.0" layoutY="103.0" prefHeight="390.0" prefWidth="380.0">
+        <columns>
+          <TableColumn fx:id="partIdColumn" editable="false" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="partNameColumn" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="partStockColumn" prefWidth="75.0" text="Stock" />
+            <TableColumn fx:id="partPriceColumn" minWidth="0.0" prefWidth="75.0" text="Price" />
+        </columns>
+      </TableView>
+      <TextField fx:id="fieldSearchParts" layoutX="154.0" layoutY="62.0" />
+      <Label layoutX="15.0" layoutY="64.0" prefHeight="23.0" prefWidth="120.0" text="Parts">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TableView fx:id="tableViewProducts" layoutX="405.0" layoutY="103.0" prefHeight="390.0" prefWidth="380.0">
+         <columns>
+            <TableColumn fx:id="productIdColumn" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="productNameColumn" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="productStockColumn" prefWidth="75.0" text="Stock" />
+            <TableColumn fx:id="productPriceColumn" minWidth="0.0" prefWidth="75.0" text="Price" />
+         </columns>
+      </TableView>
+      <Label layoutX="405.0" layoutY="64.0" prefHeight="17.0" prefWidth="79.0" text="Products">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <ButtonBar layoutX="15.0" layoutY="504.0" prefHeight="40.0" prefWidth="380.0">
+         <buttons>
+            <Button fx:id="btnAddPart" mnemonicParsing="false" onAction="#btnAddPartAction" text="Add" />
+            <Button fx:id="btnModifyPart" mnemonicParsing="false" onAction="#btnModifyPartAction" text="Modify" />
+            <Button fx:id="btnDeletePart" mnemonicParsing="false" onAction="#btnDeletePartAction" text="Delete" />
+         </buttons>
+      </ButtonBar>
+      <ButtonBar layoutX="406.0" layoutY="504.0" prefHeight="40.0" prefWidth="380.0">
+         <buttons>
+            <Button fx:id="btnAddProduct" mnemonicParsing="false" onAction="#btnAddProductAction" text="Add" />
+            <Button fx:id="btnModifyProduct" mnemonicParsing="false" onAction="#btnModifyProductAction" text="Modify" />
+            <Button fx:id="btnDeleteProduct" mnemonicParsing="false" onAction="#btnDeleteProductAction" text="Delete" />
+         </buttons>
+      </ButtonBar>
+      <ButtonBar layoutX="15.0" layoutY="552.0" prefHeight="40.0" prefWidth="770.0">
+         <buttons>
+            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#btnExit" prefHeight="27.0" prefWidth="58.0" text="Exit" />
+         </buttons>
+      </ButtonBar>
+      <AnchorPane layoutX="371.0" layoutY="-74.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: slategrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="405.0" text="Inventory Management System" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnSearchProducts" layoutX="724.0" layoutY="62.0" mnemonicParsing="false" onAction="#btnSearchProductsAction" text="Search" />
+      <TextField fx:id="fieldSearchProducts" layoutX="545.0" layoutY="62.0" prefHeight="27.0" />
+   </children>
+</AnchorPane>

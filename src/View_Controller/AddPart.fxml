@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="360.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.AddPartController">
+   <children>
+      <AnchorPane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: slategrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="405.0" text="Inventory Management System" textFill="WHITE" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="15.0" layoutY="63.0" prefHeight="23.0" prefWidth="120.0" text="Add Part">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="btnInHouse" layoutX="299.0" layoutY="99.0" mnemonicParsing="false" onAction="#btnInHouseAction" selected="true" text="In-House">
+         <toggleGroup>
+            <ToggleGroup fx:id="source" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="btnOutsourced" layoutX="299.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnOusourcedAction" text="Outsourced" toggleGroup="$source" />
+      <Label layoutX="15.0" layoutY="96.0" prefHeight="23.0" prefWidth="91.0" text="ID" />
+      <TextField fx:id="fieldId" disable="true" layoutX="125.0" layoutY="94.0" prefHeight="27.0" prefWidth="150.0" promptText="auto increment" />
+      <Label layoutX="15.0" layoutY="132.0" prefHeight="23.0" prefWidth="91.0" text="Name" />
+      <TextField fx:id="fieldName" layoutX="125.0" layoutY="130.0" prefHeight="0.0" prefWidth="150.0" />
+      <Label layoutX="15.0" layoutY="168.0" prefHeight="23.0" prefWidth="91.0" text="In Stock" />
+      <TextField fx:id="fieldStock" layoutX="125.0" layoutY="166.0" prefHeight="0.0" prefWidth="150.0" />
+      <Label layoutX="15.0" layoutY="202.0" prefHeight="23.0" prefWidth="61.0" text="Min / Max" />
+      <TextField fx:id="fieldMin" layoutX="125.0" layoutY="200.0" prefHeight="27.0" prefWidth="70.0" />
+      <TextField fx:id="fieldMax" layoutX="205.0" layoutY="200.0" prefHeight="27.0" prefWidth="70.0" />
+      <Label layoutX="15.0" layoutY="237.0" prefHeight="23.0" prefWidth="91.0" text="Price" />
+      <TextField fx:id="fieldPrice" layoutX="125.0" layoutY="235.0" prefHeight="27.0" prefWidth="150.0" />
+      <Label fx:id="lblMachineId" layoutX="14.0" layoutY="271.0" prefHeight="23.0" prefWidth="109.0" text="Machine Id" />
+      <TextField fx:id="fieldMachineId" layoutX="125.0" layoutY="269.0" prefHeight="27.0" prefWidth="150.0" />
+      <Label fx:id="lblCompanyName" layoutX="14.0" layoutY="271.0" prefHeight="23.0" prefWidth="109.0" text="Company Name" visible="false" />
+      <TextField fx:id="fieldCompanyName" layoutX="125.0" layoutY="269.0" prefHeight="27.0" prefWidth="150.0" visible="false" />
+      <ButtonBar layoutX="216.0" layoutY="313.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+            <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Cancel" />
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveAction" text="Save" />
+        </buttons>
+      </ButtonBar>
+      <Group id="source" layoutX="299.0" layoutY="121.0" visible="false" />
+   </children>
+</AnchorPane>
