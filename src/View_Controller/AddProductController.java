@@ -62,7 +62,15 @@ public class AddProductController implements Initializable {
     
     @FXML
     void btnSearchAction(ActionEvent event) {
-        tableViewParts.setItems(Inventory.lookupPart(fieldSearchParts.getText()));
+        ObservableList<Part> result = FXCollections.observableArrayList();
+        try {
+            int id = Integer.parseInt(fieldSearchParts.getText());
+            Part p = Inventory.lookupPart(id);
+            if (id == p.getId()) { result.add(p);}
+        } catch (NumberFormatException e) {
+            result = Inventory.lookupPart(fieldSearchParts.getText());
+        }
+        tableViewParts.setItems(result);
     }
     
     @FXML

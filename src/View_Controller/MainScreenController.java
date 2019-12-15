@@ -14,6 +14,8 @@ import javafx.fxml.FXML;
 import java.io.IOException;
 import java.util.Optional;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -130,12 +132,28 @@ public class MainScreenController implements Initializable {
     
     @FXML
     void btnSearchPartsAction(ActionEvent event) {
-        tableViewParts.setItems(Inventory.lookupPart(fieldSearchParts.getText()));
+        ObservableList<Part> result = FXCollections.observableArrayList();
+        try {
+            int id = Integer.parseInt(fieldSearchParts.getText());
+            Part p = Inventory.lookupPart(id);
+            if (id == p.getId()) { result.add(p);}
+        } catch (NumberFormatException e) {
+            result = Inventory.lookupPart(fieldSearchParts.getText());
+        }
+        tableViewParts.setItems(result);
     }
     
     @FXML
     void btnSearchProductsAction(ActionEvent event) {
-        tableViewProducts.setItems(Inventory.lookupProduct(fieldSearchProducts.getText()));
+        ObservableList<Product> result = FXCollections.observableArrayList();
+        try {
+            int id = Integer.parseInt(fieldSearchProducts.getText());
+            Product p = Inventory.lookupProduct(id);
+            if (id == p.getId()) { result.add(p);}
+        } catch (NumberFormatException e) {
+            result = Inventory.lookupProduct(fieldSearchProducts.getText());
+        }
+        tableViewProducts.setItems(result);
     }
     
     @FXML
